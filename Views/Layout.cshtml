@@ -1,0 +1,61 @@
+﻿@{
+    /* Global includes for theme
+    ***************************************************************/
+
+    using (Script.Head())
+    { 
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    }
+    Style.Include("http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css");
+    Style.Include("Site.css");
+    Script.Include("http://code.jquery.com/jquery-1.7.1.min.js").AtHead();
+    Script.Include("http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js").AtHead();
+        
+    /* Prep the layout wrapper
+    ***************************************************************/
+
+    Model.Id = "layout";
+    Model.Attributes.Add("data-role", "page");
+    Model.Attributes.Add("data-theme", "e");
+    var tag = Tag(Model, "div"); // using Tag so layout div gets the classes, id and other Model attributes
+}
+
+@tag.StartElement
+
+<div data-role="header">
+	<h1>@Layout.Title</h1>
+    @if (Model.Navigation != null) {
+        <div id="navigation" data-role="navbar">        
+            @Display(Model.Navigation)
+        </div>
+    } 
+</div><!-- /header -->
+
+<div data-role="content">
+    
+    @if (Model.Messages != null) {
+        <div id="messages">
+            @Display(Model.Messages)
+        </div>
+    }
+    @if (Model.Content != null) {
+        <div id="content">	
+	        @Display(Model.Content)	
+        </div>
+    }
+</div><!-- /content -->
+
+<div data-role="footer">
+    @if (Model.Footer != null)
+    {
+	    @Display(Model.Footer)	
+    }
+    <div id="sign-in">
+        @Display(New.User())
+    </div>
+    @Display(New.BadgeOfHonor())
+    
+</div><!-- /footer -->
+    
+@tag.EndElement    
+
