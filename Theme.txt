@@ -1,7 +1,6 @@
-Name: JQueryMobile
-Author: The Orchard Team
-Website: http://www.orchardproject.net
-Description: Description for the theme
-Version: 1.0
-# todo: provide tags
-# Tags: Classic, Serif
+Name: jQuery Mobile
+Author: Berry Web Labs
+Description: Theme based on the popular jQuery mobile framework for smart phones and tablets.
+Version: 1.0.0
+Website: http://berryweblabs.com
+Zones: Navigation, Messages, Content, Footer
