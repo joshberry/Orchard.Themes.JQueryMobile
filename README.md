@@ -1,6 +1,10 @@
 jQuery Mobile theme for Orchard CMS
 ===================================
 
+Overview
+--------
+The theme provides [jQuery mobile](http://jquerymobile.com) support for Orchard CMS, implementing the required css, scripts and page structure.
+
 Setup
 -----
 1. Download and install the theme from the [Orchard theme gallery](http://gallery.orchardproject.net).
